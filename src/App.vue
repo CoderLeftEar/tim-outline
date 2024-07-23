@@ -17,7 +17,7 @@ const FIELD_NAMES = {
 
 <template>
   <h1>Github Page</h1>
-  <h1>{{ title }}</h1>
+  <h2>Route Query:{{ title }}</h2>
   <!-- <HelloWorld :field-names="FIELD_NAMES" /> -->
 </template>
 
