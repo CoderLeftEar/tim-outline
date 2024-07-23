@@ -16,6 +16,7 @@ const FIELD_NAMES = {
 </script>
 
 <template>
+  <h1>Github Page</h1>
   <h1>{{ title }}</h1>
   <!-- <HelloWorld :field-names="FIELD_NAMES" /> -->
 </template>
