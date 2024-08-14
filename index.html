@@ -5,13 +5,31 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src='https://sf1-scmcdn-cn.feishucdn.com/obj/feishu-static/op/fe/devtools_frontend/remote-debug-0.0.1-alpha.6.js'></script> -->
-    <title>Vite + Vue</title>
+    <title>OA 应用</title>
   </head>
   <body>
     <!-- <div id="app"></div> -->
     <!-- <script type="module" src="/src/main.js"></script> -->
     <script>
-      location.href = 'https://oaweb.g-bits.com/pixiu/#/page-canteen-menu/dining-pay?city=SHENZHEN&address=SHENZHEN_T1&foodType=NOODLE'
+      const params = new URLSearchParams(location.search);
+      const q = params.get('q');
+      const foodTypeMap = {
+        ND: 'NOODLE',
+        RC: 'RICE',
+        SM: 'SET_MEAL'
+      }
+      const cityMap = {
+        SZ: 'SHENZHEN',
+        XM: 'XIAMEN'
+      }
+      const addressMap = {
+        T1: 'SHENZHEN_T1',
+        T2: 'SHENZHEN_T2',
+        QH: 'SHENZHEN_QIANHAI'
+      }
+      const [foodType, city, address] = q?.split?.('_')
+      
+      location.href = `https://oaweb.g-bits.com/pixiu/#/page-canteen-menu/dining-pay?city=${cityMap[city]}&address=${addressMap[address]}&foodType=${foodTypeMap[foodType]}`
     </script>
   </body>
 </html>
